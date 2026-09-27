@@ -1,0 +1,18 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+#<% if (cachingRegistries && !cachingRegistries.isEmpty()) { %>
+containerdConfigPatches:
+  - |-
+    [plugins."io.containerd.grpc.v1.cri".registry]
+        config_path = "/etc/containerd/certs.d"
+#<% } %>
+nodes:
+  - role: control-plane
+#<% if (nodePorts && !nodePorts.isEmpty()) { %>
+    extraPortMappings:
+#<% nodePorts.each { nodePort -> %>
+      - containerPort: <%= nodePort %>
+        hostPort: <%= nodePort %>
+        protocol: TCP
+#<% } %>
+#<% } %>
