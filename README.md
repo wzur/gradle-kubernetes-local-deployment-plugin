@@ -87,3 +87,5 @@ Publish after validation with:
 This project has been started to learn a bit more about Gradle internals. It is a by-product
 of a take-home task during a recruitment process. Due to these circumstances, it hasn't been
 tested on anything but Linux. If you find it useful, feel free to drop me a line.
+
+I've elaborated much more about that in this project's [Wiki](https://github.com/wzur/gradle-kubernetes-local-deployment-plugin/wiki)
